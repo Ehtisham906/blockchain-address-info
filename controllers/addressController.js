@@ -235,7 +235,7 @@ async function getRawTxHex(req, res) {
         const response = await axios.get(`https://blockstream.info/api/tx/${txid}/hex`);
         res.type('text/plain').send(response.data);
     } catch (error) {
-        console.error("Error fetching raw tx hex:", error.message);
+        console.error("Error  fetching raw tx hex:", error.message);
         res.status(500).json({ error: "Failed to fetch raw transaction hex", details: error.message });
     }
 }
